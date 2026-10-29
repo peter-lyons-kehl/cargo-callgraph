@@ -2,6 +2,12 @@
 
 Generate static callgraphs for Rust workspaces using [rust-analyzer](https://rust-analyzer.github.io/) internals. Built on [petgraph](https://github.com/petgraph/petgraph) with JSON/DOT export, graph traversal queries, and an MCP server for AI assistants.
 
+## Credits
+
+This is a modified/updated download/fork of v. 0.1.0 of
+[crates.io/crates/cargo-callgraph](https://crates.io/crates/cargo-callgraph),
+originally by [Sienna Meridian Satterwhite](https://github.com/siennathesane/).
+
 ## Features
 
 - **Workspace-scoped** — traces calls across all local crates, stopping at `std`/`core`/`libc` boundaries
