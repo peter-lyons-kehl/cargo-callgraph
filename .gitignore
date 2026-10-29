@@ -1,0 +1,6 @@
+/target
+/Cargo.lock
+callgraph.json
+callgraph.dot
+callgraph.svg
+examples/**/callgraph.*
