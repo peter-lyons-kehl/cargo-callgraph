@@ -551,21 +551,18 @@ impl CallgraphMcpServer {
 
 #[tool_handler(router = Self::tool_router())]
 impl ServerHandler for CallgraphMcpServer {
-    fn get_info(&self) -> ServerInfo {
-        ServerInfo {
-            protocol_version: ProtocolVersion::V_2024_11_05,
-            capabilities: ServerCapabilities::builder()
+    fn get_info(&self) -> ServerConfig {
+        ServerConfig::new(
+            ServerCapabilities::builder()
                 .enable_tools()
-                .build(),
-            server_info: Implementation {
-                name: "cargo-callgraph-mcp".into(),
-                title: Some("cargo-callgraph MCP Server".into()),
-                version: env!("CARGO_PKG_VERSION").into(),
-                description: Some("MCP server for Rust callgraph analysis".into()),
-                icons: None,
-                website_url: None,
-            },
-            instructions: Some("MCP server for Rust callgraph analysis. Use generate_callgraph first to load a workspace, then query with traverse_outgoing, traverse_incoming, find_call_paths, search_nodes, get_node_details, list_crates, summarize_graph, explore_workspace, find_dead_code, find_cycles, or find_bottlenecks.".into()),
-        }
+                .build()
+        )
+        .with_protocol_version(ProtocolVersion::V_2024_11_05)
+        .with_server_info(
+            Implementation::new("cargo-callgraph-mcp", env!("CARGO_PKG_VERSION"))
+            .with_title("cargo-callgraph MCP Server")
+            .with_description("MCP server for Rust callgraph analysis")
+        )
+        .with_instructions( "MCP server for Rust callgraph analysis. Use generate_callgraph first to load a workspace, then query with traverse_outgoing, traverse_incoming, find_call_paths, search_nodes, get_node_details, list_crates, summarize_graph, explore_workspace, find_dead_code, find_cycles, or find_bottlenecks.")
     }
 }
