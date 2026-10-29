@@ -14,15 +14,15 @@ readme = "README.md"
 # rust-analyzer internals (published to crates.io as ra_ap_*)
 # Version pinning note: these crates are tightly coupled and released in lockstep.
 # We let Cargo resolve a compatible set, then pin.
-ra_ap_load-cargo = "=0.0.334"
-ra_ap_project_model = "=0.0.334"
-ra_ap_ide = "=0.0.334"
-ra_ap_ide_db = "=0.0.334"
-ra_ap_hir = "=0.0.334"
-ra_ap_base_db = "=0.0.334"
-ra_ap_vfs = "=0.0.334"
-ra_ap_syntax = "=0.0.334"
-ra_ap_paths = "=0.0.334"
+ra_ap_load-cargo = "=0.0.358"
+ra_ap_project_model = "=0.0.358"
+ra_ap_ide = "=0.0.358"
+ra_ap_ide_db = "=0.0.358"
+ra_ap_hir = "=0.0.358"
+ra_ap_base_db = "=0.0.358"
+ra_ap_vfs = "=0.0.358"
+ra_ap_syntax = "=0.0.358"
+ra_ap_paths = "=0.0.358"
 
 # graph + serialization
 petgraph = "0.6"
