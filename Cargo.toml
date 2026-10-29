@@ -24,6 +24,13 @@ ra_ap_vfs = "=0.0.358"
 ra_ap_syntax = "=0.0.358"
 ra_ap_paths = "=0.0.358"
 
+# cargo-callgraph does NOT use the following two directly. However, we **do** list them here, so as
+# to avoid "UNICODE_VERSION" incompatibility between these two crates.
+#
+# NOT v1.0.27 to be used yet
+unicode-ident = "=1.0.24"
+unicode-properties = "=0.1.4"
+
 # graph + serialization
 petgraph = "0.6"
 serde = { version = "1", features = ["derive"] }
